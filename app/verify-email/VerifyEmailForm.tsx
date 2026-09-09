@@ -68,7 +68,7 @@ export default function VerifyEmailForm({ token }: { token: string }) {
                     </>
                 ) : (
                     <>
-                        <p className="mt-3 text-gray-600">Confirm that you want to verify this email address for Tarbiyah Planner.</p>
+                        <p className="mt-3 text-gray-600">Confirm that you want to verify this email address for GrowHabits.</p>
                         {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
                         <Button className="mt-7 w-full" disabled={isVerifying} onClick={verifyEmail}>
                             {isVerifying ? "Verifying email..." : "Verify email"}

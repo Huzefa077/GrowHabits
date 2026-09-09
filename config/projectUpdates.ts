@@ -18,7 +18,7 @@ export const projectUpdates: ProjectUpdate[] = [
   },
   {
     publishedAt: "2026-08-25T10:00:00Z",
-    title: "Welcome to Tarbiyah Planner",
+    title: "Welcome to GrowHabits",
     message: "Version: 1",
     status: "New",
   },

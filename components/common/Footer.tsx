@@ -3,7 +3,7 @@ export default function Footer() {
   return (
     <footer className="no-print border-t bg-card px-4 py-3 text-xs text-muted-foreground sm:px-8">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 text-center sm:flex-row sm:text-left">
-        <p>© 2026 Tarbiyah Planner. All rights reserved.</p>
+        <p>© 2026 GrowHabits. All rights reserved.</p>
 
         <p>
           Built by{" "}

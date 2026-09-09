@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { getCurrentUser } from "@/lib/auth";
 import ThemeToggle from "@/components/common/ThemeToggle";
 import MobileNavbarMenu from "@/components/common/MobileNavbarMenu";
+import LogoutButton from "@/components/common/LogoutButton";
 import { NavigationLinks } from "@/components/common/NavigationLinks";
 
 // This server component appears in the root layout, so it is available on every page.
@@ -18,7 +19,7 @@ export default async function Navbar() {
       <nav className="mx-auto hidden w-full max-w-360 grid-cols-[1fr_auto] items-center gap-x-3 gap-y-2 px-5 py-3 sm:grid sm:grid-cols-[1fr_auto_1fr]">
         {/* The app name always leads back to the landing page. */}
         <Link href="/" className="justify-self-start font-fredoka text-2xl font-semibold text-primary transition-transform duration-200 hover:scale-[1.03] motion-reduce:transform-none">
-          Tarbiyah Planner
+          GrowHabits
         </Link>
 
         {/* The middle grid column stays centred even when left and right content have different widths. */}
@@ -31,11 +32,7 @@ export default async function Navbar() {
           <ThemeToggle />
 
           {user && (
-            <form action="/api/auth/logout" method="POST">
-              <Button className="text-base" type="submit" variant="outline">
-                Log out
-              </Button>
-            </form>
+            <LogoutButton className="text-base" />
           )}
 
           {!user && (

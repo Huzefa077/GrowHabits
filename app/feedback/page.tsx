@@ -52,7 +52,7 @@ export default function FeedbackPage() {
         <main className="min-h-screen bg-gray-100 px-4 py-12">
             <section className="mx-auto w-full max-w-xl rounded-xl bg-white p-8 shadow-lg">
                 <p className="text-sm font-semibold text-primary">
-                    HELP IMPROVE TARBIYAH PLANNER
+                    Help improve GrowHabits
                 </p>
 
                 <h1 className="mt-2 text-3xl font-bold">

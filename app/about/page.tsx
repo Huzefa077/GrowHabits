@@ -10,7 +10,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-gray-100 px-4 py-10 sm:px-8 sm:py-12">
       <article className="mx-auto max-w-3xl rounded-xl bg-white p-6 shadow sm:p-10">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-          About Tarbiyah Planner
+          About GrowHabits
         </p>
         <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
           Small daily actions can build lasting routines.
@@ -21,8 +21,8 @@ export default function AboutPage() {
           <p className="mt-3 leading-7 text-gray-600">
             Parents often have good intentions for their children&apos;s learning,
             character, and daily habits, but turning those intentions into a
-            routine that a child can follow every day is difficult. Tarbiyah
-            Planner was created to turn those ideas into one clear, printable
+            routine that a child can follow every day is difficult. GrowHabits
+            was created to turn those ideas into one clear, printable
             monthly planner.
           </p>
         </section>
@@ -110,7 +110,7 @@ export default function AboutPage() {
             Huzaifa Sheikh
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Full Stack Developer and creator of Tarbiyah Planner. I build practical web products that turn everyday needs into simple, useful experiences.
+            Full Stack Developer and creator of GrowHabits. I build practical web products that turn everyday needs into simple, useful experiences.
           </p>
 
           <div className="my-7 h-px bg-zinc-200 dark:bg-zinc-800" />

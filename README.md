@@ -1,6 +1,6 @@
-# Tarbiyah Planner
+# GrowHabits
 
-Tarbiyah Planner is a full-stack web application for helping parents turn positive intentions into clear, printable monthly routines for children. Parents can organise small daily activities around learning, good deeds, movement, prayer, family time, and custom focus areas.
+GrowHabits is a full-stack web application for helping parents turn positive intentions into clear, printable monthly routines for children. Parents can organise small daily activities around learning, good deeds, movement, prayer, family time, and custom focus areas.
 
 The project is built as a practical Next.js learning project, with a focus on understandable code, reusable components, and a complete user flow rather than only a static interface.
 
@@ -83,7 +83,7 @@ For a guided map of the codebase, see [PROJECT_MAP.md](./PROJECT_MAP.md).
 | PostgreSQL + TypeORM | Models the natural relationship: one user owns planners; a planner contains sections and activities. |
 | HTTP-only JWT cookie | Keeps the sign-in token unavailable to client-side JavaScript. |
 | bcrypt | Stores a one-way password hash, never the original password. |
-| Google OAuth | Lets Google users sign in without Tarbiyah Planner seeing or storing their Google password. |
+| Google OAuth | Lets Google users sign in without GrowHabits seeing or storing their Google password. |
 | Printable-first layout | Uses physical-paper measurements so preview and print stay consistent. |
 
 ## Data model
@@ -105,8 +105,8 @@ When a planner is deleted, its sections and activities are deleted with it throu
 1. Clone the repository.
 
    ```bash
-   git clone https://github.com/Huzefa077/tarbiyah-planner.git
-   cd tarbiyah-planner
+   git clone https://github.com/Huzefa077/GrowHabits.git
+   cd GrowHabits
    ```
 
 2. Install dependencies.

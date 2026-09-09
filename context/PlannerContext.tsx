@@ -11,8 +11,8 @@ import {
 } from "react";
 
 // sessionStorage belongs to one browser tab and is never sent to PostgreSQL.
-const DRAFT_STORAGE_KEY = "tarbiyah-planner-draft";
-const GUEST_PLANNERS_STORAGE_KEY = "tarbiyah-planner-guest-planners";
+const DRAFT_STORAGE_KEY = "growhabits-draft";
+const GUEST_PLANNERS_STORAGE_KEY = "growhabits-guest-planners";
 
 /*
 Shared Planner State

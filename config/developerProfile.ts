@@ -6,5 +6,5 @@ export const developerProfile = {
   phoneNumbers: ["+919579792089", "+966579393201"],
   portfolioUrl: "https://huzaifasheikh.dev",
   introduction:
-    "I am Huzaifa Sheikh, a Full Stack Developer and the creator of Tarbiyah Planner.",
+    "I am Huzaifa Sheikh, a Full Stack Developer and the creator of GrowHabits.",
 };

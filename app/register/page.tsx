@@ -140,7 +140,7 @@ export default function RegisterPage() {
                 </h1>
 
                 <p className="text-center text-gray-500 mt-2">
-                    Start building your child&apos;s Tarbiyah Planner
+                    Start building your child&apos;s habits with GrowHabits
                 </p>
 
                 <form

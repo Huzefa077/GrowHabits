@@ -24,7 +24,7 @@ const fredoka = Fredoka({
 
 export const metadata: Metadata = {
   // This title appears in the browser tab and bookmark name.
-  title: "Tarbiyah Planner",
+  title: "GrowHabits",
   description: "Build consistent routines and support positive habits, one day at a time.",
 };
 

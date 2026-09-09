@@ -1,4 +1,4 @@
-# Tarbiyah Planner: Quick Project Map
+# GrowHabits: Quick Project Map
 
 > Rule to remember: in Next.js, a file's **folder location** gives it meaning.
 > `app/login/page.tsx` and `app/register/page.tsx` have the same filename, but create two different URLs.
@@ -28,7 +28,7 @@ URL                         FILE THAT RUNS                              PURPOSE
 ## 2. Full folder tree
 
 ```text
-tarbiyah-planner/
+GrowHabits/
 │
 ├─ app/                                  ← screens and API routes
 │  ├─ layout.tsx                         ← shared shell: fonts, navbar, planner state

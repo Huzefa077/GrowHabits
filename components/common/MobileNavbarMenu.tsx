@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/common/ThemeToggle";
+import LogoutButton from "@/components/common/LogoutButton";
 import { NavigationLinks } from "@/components/common/NavigationLinks";
 
 // This compact navigation replaces the desktop row on small screens.
@@ -26,7 +27,7 @@ export default function MobileNavbarMenu({
         href="/"
         onClick={closeMenu}
       >
-        Tarbiyah Planner
+        GrowHabits
       </Link>
 
       <button
@@ -53,9 +54,7 @@ export default function MobileNavbarMenu({
             <ThemeToggle />
 
             {isSignedIn ? (
-              <form action="/api/auth/logout" method="POST">
-                <Button type="submit" variant="outline">Log out</Button>
-              </form>
+              <LogoutButton />
             ) : (
               <div className="flex items-center gap-3">
                 <Link className="rounded-md px-2 py-1 text-base font-medium text-gray-600 transition duration-200 hover:scale-[1.03] hover:bg-muted hover:text-foreground motion-reduce:transform-none" href="/login" onClick={closeMenu}>

@@ -27,11 +27,11 @@ export async function sendPasswordResetEmail({
     });
 
     await transporter.sendMail({
-        from: `Tarbiyah Planner <${gmailUser}>`,
+        from: `GrowHabits <${gmailUser}>`,
         to: recipient,
-        subject: "Reset your Tarbiyah Planner password",
-        text: `We received a request to reset your password. Open this link within 15 minutes: ${resetUrl}\n\nIf you did not request this, you can safely ignore this email.`,
-        html: `<p>We received a request to reset your Tarbiyah Planner password.</p><p><a href="${resetUrl}">Reset your password</a></p><p>This link expires in 15 minutes. If you did not request it, you can safely ignore this email.</p>`,
+        subject: "Reset your GrowHabits password",
+        text: `We received a request to reset your GrowHabits password. Open this link within 15 minutes: ${resetUrl}\n\nIf you did not request this, you can safely ignore this email.`,
+        html: `<p>We received a request to reset your GrowHabits password.</p><p><a href="${resetUrl}">Reset your password</a></p><p>This link expires in 15 minutes. If you did not request it, you can safely ignore this email.</p>`,
     });
 }
 
@@ -61,10 +61,10 @@ export async function sendEmailVerificationEmail({
     });
 
     await transporter.sendMail({
-        from: `Tarbiyah Planner <${gmailUser}>`,
+        from: `GrowHabits <${gmailUser}>`,
         to: recipient,
-        subject: "Verify your Tarbiyah Planner email",
-        text: `Welcome to Tarbiyah Planner. Verify your email within 24 hours: ${verificationUrl}`,
-        html: `<p>Welcome to Tarbiyah Planner.</p><p><a href="${verificationUrl}">Verify your email address</a></p><p>This link expires in 24 hours.</p>`,
+        subject: "Verify your GrowHabits email",
+        text: `Welcome to GrowHabits. Verify your email within 24 hours: ${verificationUrl}`,
+        html: `<p>Welcome to GrowHabits.</p><p><a href="${verificationUrl}">Verify your email address</a></p><p>This link expires in 24 hours.</p>`,
     });
 }
