@@ -147,7 +147,7 @@ export async function POST(request: Request) {
             return NextResponse.json(
                 {
                     success: false,
-                    message: "Please verify your email address before signing in.",
+                    message: "Complete your sign-up by verifying your email address before signing in. Check your inbox for the verification link.",
                     needsEmailVerification: true,
                 },
                 { status: 403 }
