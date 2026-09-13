@@ -258,7 +258,7 @@ export default function LoginPage() {
                     <p className="text-right text-sm">
                         <Link
                             href="/forgot-password"
-                            className="text-blue-600 hover:underline"
+                            className="text-blue-600 hover:underline dark:text-blue-400"
                         >
                             Forgot password?
                         </Link>
@@ -278,7 +278,7 @@ export default function LoginPage() {
                             </p>
 
                             <button
-                                className="text-blue-600 hover:underline disabled:cursor-not-allowed disabled:opacity-60"
+                                className="text-blue-600 hover:underline dark:text-blue-400 disabled:cursor-not-allowed disabled:opacity-60"
                                 disabled={isResendingVerification}
                                 onClick={handleResendVerification}
                                 type="button"
@@ -314,7 +314,7 @@ export default function LoginPage() {
 
                     <Link
                         href="/register"
-                        className="text-blue-600 hover:underline"
+                        className="text-blue-600 hover:underline dark:text-blue-400"
                     >
                         Sign up
                     </Link>

@@ -68,7 +68,7 @@ export default function ForgotPasswordPage() {
                         <p className="mt-4 text-sm text-gray-500">
                             Created your account with Google? Google manages that password. Use{" "}
                             {/* This API route redirects the whole browser to Google's sign-in page. */}
-                            <a className="text-blue-600 hover:underline" href="/api/auth/google">
+                            <a className="password-help-link hover:underline" href="/api/auth/google">
                                 Continue with Google
                             </a>
                             {" "}instead.
@@ -79,7 +79,7 @@ export default function ForgotPasswordPage() {
                         </Button>
 
                         <button
-                            className="mt-4 text-sm text-blue-600 hover:underline"
+                            className="mt-4 text-sm password-help-link hover:underline"
                             onClick={() => setMessage("")}
                             type="button"
                         >
@@ -115,7 +115,7 @@ export default function ForgotPasswordPage() {
 
                         <p className="mt-6 text-center text-sm text-gray-600">
                             Signed up with Google? Use{" "}
-                            <Link className="text-blue-600 hover:underline" href="/login">
+                            <Link className="password-help-link hover:underline" href="/login">
                                 Continue with Google
                             </Link>
                             .

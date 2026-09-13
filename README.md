@@ -115,7 +115,7 @@ When a planner is deleted, its sections and activities are deleted with it throu
    npm install
    ```
 
-3. Create a local `.env` file with your own database, JWT, Google OAuth, and email credentials. Never commit this file.
+3. Copy `.env.example` to `.env` and enter your database, JWT, Google OAuth, and email credentials. Never commit `.env`.
 
    ```env
    DATABASE_URL=your-postgresql-connection-string
@@ -123,8 +123,8 @@ When a planner is deleted, its sections and activities are deleted with it throu
    JWT_SECRET=a-long-random-secret
    GOOGLE_CLIENT_ID=your-google-client-id
    GOOGLE_CLIENT_SECRET=your-google-client-secret
-   GMAIL_USER=your-gmail-address
-   GMAIL_APP_PASSWORD=your-gmail-app-password
+   SMTP_USER=your-shared-sender@gmail.com
+   SMTP_PASS=your-project-specific-google-app-password
    CRON_SECRET=a-long-random-secret
    ```
 
@@ -135,6 +135,37 @@ When a planner is deleted, its sections and activities are deleted with it throu
    ```
 
 5. Open `http://localhost:3000`.
+
+## Shared portfolio email sender
+
+One Gmail account can send authentication emails for multiple portfolio projects.
+Use a separate Google App Password for each project so it can be revoked independently.
+Enable 2-Step Verification on the sender account, generate an app password named for this
+project, and enter it privately as SMTP_PASS. App passwords are not account-isolated:
+every project's credential accesses the same sender account and shares its sending limits.
+
+Configure PROJECT_NAME, PROJECT_OWNER_NAME, and PROJECT_PORTFOLIO_URL for the attribution
+included in both plain-text and HTML verification/reset emails. The default From display
+name is "GrowHabits — Huzaifa Sheikh", with SMTP_USER as the actual address.
+EMAIL_FROM optionally overrides it using "Display Name <address>" syntax. For Gmail,
+use the authenticated sender address; a display name cannot hide or replace that address.
+
+SMTP_HOST defaults to smtp.gmail.com, SMTP_PORT to 465, and SMTP_SECURE to true
+(implicit TLS). For STARTTLS, set SMTP_PORT=587 and SMTP_SECURE=false; TLS is required.
+Keep all credentials server-only, never use NEXT_PUBLIC_ prefixes, and never put real
+credentials in this README or .env.example.
+
+Existing deployments can continue using GMAIL_USER and GMAIL_APP_PASSWORD until migrated.
+When either SMTP_USER or SMTP_PASS is configured, both SMTP credentials are required;
+the service does not mix old and new account credentials.
+
+Set these values in hosting environment settings as well, then restart locally or redeploy.
+Test both verification and password-reset delivery after changing accounts. Token generation,
+expiration, and database behavior are unchanged. Gmail is suitable for light portfolio demos,
+but delivery to the inbox is not guaranteed and account limits affect all projects.
+
+Validation: npx.cmd tsc --noEmit --incremental false, npm.cmd run lint, and npm.cmd run build.
+There is no dedicated backend test script. Check real email delivery separately.
 
 ## Useful commands
 

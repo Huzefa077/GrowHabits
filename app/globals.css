@@ -519,3 +519,25 @@ summary {
     page: planner-a3;
   }
 }
+
+/* Keep the registration footer below the initial viewport, after the full form. */
+@media screen {
+  body:has(.register-page) {
+    position: relative;
+  }
+
+  body:has(.register-page) > footer {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+}
+
+/* Password recovery links stay readable in both themes and result states. */
+.password-help-link {
+  color: #2563eb;
+}
+
+.dark .password-help-link {
+  color: #93c5fd;
+}

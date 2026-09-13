@@ -123,7 +123,7 @@ export default function RegisterPage() {
     }
 
     return (
-        <main className="min-h-screen flex items-center justify-center bg-gray-100">
+        <main className="register-page flex flex-1 items-center justify-center bg-gray-100 px-4 py-8">
 
             <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-lg">
 
@@ -272,7 +272,7 @@ export default function RegisterPage() {
 
                     <Link
                         href="/login"
-                        className="text-blue-600 hover:underline"
+                        className="text-blue-600 hover:underline dark:text-blue-400"
                     >
                         Sign in
                     </Link>
