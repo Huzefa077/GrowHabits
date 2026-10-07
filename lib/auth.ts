@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 
@@ -33,7 +34,7 @@ instead of repeating this logic.
 ==========================================================
 */
 
-export async function getCurrentUser() {
+async function findCurrentUser() {
     /*
     Read the HTTP-only authentication cookie.
 
@@ -135,3 +136,10 @@ export async function getCurrentUser() {
         return null;
     }
 }
+
+/*
+The root layout and the navbar both need the current user on every page.
+React's cache() runs the cookie + database check once per request and
+reuses the answer, instead of querying PostgreSQL twice.
+*/
+export const getCurrentUser = cache(findCurrentUser);

@@ -48,6 +48,9 @@ export interface GuestPlanner {
 }
 
 interface PlannerContextType {
+    // True when the server found a logged-in user while rendering the page.
+    isSignedIn: boolean;
+
     // Database ID of the planner currently being edited. Null means a new planner.
     editingPlannerId: number | null;
     setEditingPlannerId: Dispatch<SetStateAction<number | null>>;
@@ -96,10 +99,12 @@ export const PlannerContext =
 
 interface PlannerProviderProps {
     children: ReactNode;
+    isSignedIn: boolean;
 }
 
 export function PlannerProvider({
     children,
+    isSignedIn,
 }: PlannerProviderProps) {
 
     // Available sections.
@@ -271,6 +276,8 @@ export function PlannerProvider({
     return (
         <PlannerContext.Provider
             value={{
+                isSignedIn,
+
                 editingPlannerId,
                 setEditingPlannerId,
 

@@ -3,6 +3,7 @@ import { PlannerProvider } from "@/context/PlannerContext";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import { PageLoaderProvider } from "@/components/common/PageLoader";
+import { getCurrentUser } from "@/lib/auth";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fredoka } from "next/font/google";
 import "./globals.css";
@@ -28,11 +29,14 @@ export const metadata: Metadata = {
   description: "Build consistent routines and support positive habits, one day at a time.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Planner pages use this to decide, before saving, between PostgreSQL and guest browser storage.
+  const user = await getCurrentUser();
+
   return (
     <html
       lang="en"
@@ -45,7 +49,7 @@ export default function RootLayout({
           <Navbar />
 
           {/* Every page has access to PlannerContext. */}
-          <PlannerProvider>
+          <PlannerProvider isSignedIn={Boolean(user)}>
             {children}
           </PlannerProvider>
 

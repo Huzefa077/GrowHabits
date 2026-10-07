@@ -322,6 +322,7 @@ export default function PreviewPage() {
     }
 
     const {
+        isSignedIn,
         availableSections,
         selectedSections,
         activities,
@@ -417,6 +418,13 @@ export default function PreviewPage() {
             return;
         }
 
+        // Guests never call the server: their planner is saved in this browser tab only.
+        if (!isSignedIn) {
+            saveGuestPlanner();
+            setSaveSuccess("temporary");
+            return;
+        }
+
         setIsSaving(true);
 
         try {
@@ -434,9 +442,9 @@ export default function PreviewPage() {
 
             if (!response.ok) {
                 if (response.status === 401) {
-                    // Guests receive a browser-session save instead of a PostgreSQL save.
-                    saveGuestPlanner();
-                    setSaveSuccess("temporary");
+                    // The user was signed in when the page loaded, so a 401 means the login has expired.
+                    // The draft stays in this tab, so they can log in and save again.
+                    setSaveError("Your login session has expired. Please log in again, then save.");
                     return;
                 }
 
